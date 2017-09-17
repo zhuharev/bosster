@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package main;
+// server
+package server;
 
 // The greeting service definition.
 service Poster {
@@ -42,20 +43,25 @@ message Post {
 
 // The request message
 message PostRequest {
+  string id = 1;
+
+  Post post = 2;
+
   // if async == false, server will send response instantly and enqueue
   // post request to background
   // if async == true, server will be wait to post article to each soc network
-  bool async = 2;
-  Post post = 1;
+  bool async = 3;
+
   repeated Contact contacts = 4;
 
   // TODO: maybe rename this
   repeated SocialType targets = 5;
 
-  //
-  string social_token = 6;
-  string social_login = 7;
-  string social_password = 8;
+  // id группы для постинга
+  string social_id = 6;
+  string social_token = 7;
+  string social_login = 8;
+  string social_password = 9;
 }
 
 enum STATUS {
@@ -67,12 +73,19 @@ enum STATUS {
 
 // для каждой соцсети свой PostJob
 message PostJob {
-  string social_id = 1;
-  SocialType social_provider = 2;
+  // нужно для запроса состояния,
+  // если процедура будет выполняться асинхронно
+  string post_request_id = 1;
+  // id поста
+  string social_id = 2;
+  // на чью стену опубликовали
+  string social_owner_id = 3;
 
-  STATUS status = 3;
+  SocialType social_provider = 4;
+
+  STATUS status = 5;
   // optional
-  string error = 4;
+  string error = 6;
 
 }
 

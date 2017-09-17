@@ -4,4 +4,7 @@ package bosster
 type Credentials struct {
 	FacebookToken   string
 	FacebookGroupID string
+
+	VkAccessToken string
+	VkOwnerID     int
 }
