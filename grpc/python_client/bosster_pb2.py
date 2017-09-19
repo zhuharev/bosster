@@ -18,14 +18,14 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='bosster.proto',
-  package='main',
+  package='bosster',
   syntax='proto3',
-  serialized_pb=_b('\n\rbosster.proto\x12\x04main\"~\n\x07\x43ontact\x12\x0c\n\x04name\x18\x01 \x01(\t\x12 \n\x04type\x18\x02 \x01(\x0e\x32\x12.main.Contact.Type\x12\r\n\x05value\x18\x03 \x01(\t\"4\n\x04Type\x12\r\n\tUNIVERSAL\x10\x00\x12\t\n\x05PHONE\x10\x01\x12\x07\n\x03URL\x10\x02\x12\t\n\x05\x45MAIL\x10\x03\"\xc7\x01\n\x06Target\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12\x1e\n\x04type\x18\x02 \x01(\x0e\x32\x10.main.SocialType\x12\x11\n\tsocial_id\x18\x03 \x01(\t\x12\x14\n\x0csocial_token\x18\x04 \x01(\t\x12\x14\n\x0csocial_login\x18\x05 \x01(\t\x12\x17\n\x0fsocial_password\x18\x06 \x01(\t\x12\x15\n\rsocial_app_id\x18\x07 \x01(\t\x12\x19\n\x11social_app_secret\x18\x08 \x01(\t\"+\n\x04Post\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x12\n\nimage_urls\x18\x02 \x03(\t\"u\n\x0bPostRequest\x12\x18\n\x04post\x18\x01 \x01(\x0b\x32\n.main.Post\x12\x0c\n\x04sync\x18\x02 \x01(\x08\x12\x1f\n\x08\x63ontacts\x18\x04 \x03(\x0b\x32\r.main.Contact\x12\x1d\n\x07targets\x18\x05 \x03(\x0b\x32\x0c.main.Target\"a\n\x07PostJob\x12)\n\x0fsocial_provider\x18\x02 \x01(\x0e\x32\x10.main.SocialType\x12\x1c\n\x06status\x18\x03 \x01(\x0e\x32\x0c.main.STATUS\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"(\n\tPostReply\x12\x1b\n\x04jobs\x18\x01 \x03(\x0b\x32\r.main.PostJob*V\n\nSocialType\x12\x08\n\x04NONE\x10\x00\x12\x06\n\x02VK\x10\x01\x12\x0c\n\x08TELEGRAM\x10\x02\x12\r\n\tINSTAGRAM\x10\x03\x12\x0b\n\x07TWITTER\x10\x04\x12\x0c\n\x08\x46\x41\x43\x45\x42OOK\x10\x05*<\n\x06STATUS\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\x12\r\n\tCOMPLETED\x10\x03\x32\x36\n\x06Poster\x12,\n\x04Post\x12\x11.main.PostRequest\x1a\x0f.main.PostReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\rbosster.proto\x12\x07\x62osster\"\x81\x01\n\x07\x43ontact\x12\x0c\n\x04name\x18\x01 \x01(\t\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.bosster.Contact.Type\x12\r\n\x05value\x18\x03 \x01(\t\"4\n\x04Type\x12\r\n\tUNIVERSAL\x10\x00\x12\t\n\x05PHONE\x10\x01\x12\x07\n\x03URL\x10\x02\x12\t\n\x05\x45MAIL\x10\x03\"\xca\x01\n\x06Target\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12!\n\x04type\x18\x02 \x01(\x0e\x32\x13.bosster.SocialType\x12\x11\n\tsocial_id\x18\x03 \x01(\t\x12\x14\n\x0csocial_token\x18\x04 \x01(\t\x12\x14\n\x0csocial_login\x18\x05 \x01(\t\x12\x17\n\x0fsocial_password\x18\x06 \x01(\t\x12\x15\n\rsocial_app_id\x18\x07 \x01(\t\x12\x19\n\x11social_app_secret\x18\x08 \x01(\t\"+\n\x04Post\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x12\n\nimage_urls\x18\x02 \x03(\t\"~\n\x0bPostRequest\x12\x1b\n\x04post\x18\x01 \x01(\x0b\x32\r.bosster.Post\x12\x0c\n\x04sync\x18\x02 \x01(\x08\x12\"\n\x08\x63ontacts\x18\x04 \x03(\x0b\x32\x10.bosster.Contact\x12 \n\x07targets\x18\x05 \x03(\x0b\x32\x0f.bosster.Target\"|\n\x07PostJob\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12,\n\x0fsocial_provider\x18\x02 \x01(\x0e\x32\x13.bosster.SocialType\x12\x1f\n\x06status\x18\x03 \x01(\x0e\x32\x0f.bosster.STATUS\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"+\n\tPostReply\x12\x1e\n\x04jobs\x18\x01 \x03(\x0b\x32\x10.bosster.PostJob*V\n\nSocialType\x12\x08\n\x04NONE\x10\x00\x12\x06\n\x02VK\x10\x01\x12\x0c\n\x08TELEGRAM\x10\x02\x12\r\n\tINSTAGRAM\x10\x03\x12\x0b\n\x07TWITTER\x10\x04\x12\x0c\n\x08\x46\x41\x43\x45\x42OOK\x10\x05*<\n\x06STATUS\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\x12\r\n\tCOMPLETED\x10\x03\x32<\n\x06Poster\x12\x32\n\x04Post\x12\x14.bosster.PostRequest\x1a\x12.bosster.PostReply\"\x00\x62\x06proto3')
 )
 
 _SOCIALTYPE = _descriptor.EnumDescriptor(
   name='SocialType',
-  full_name='main.SocialType',
+  full_name='bosster.SocialType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -56,15 +56,15 @@ _SOCIALTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=658,
-  serialized_end=744,
+  serialized_start=707,
+  serialized_end=793,
 )
 _sym_db.RegisterEnumDescriptor(_SOCIALTYPE)
 
 SocialType = enum_type_wrapper.EnumTypeWrapper(_SOCIALTYPE)
 _STATUS = _descriptor.EnumDescriptor(
   name='STATUS',
-  full_name='main.STATUS',
+  full_name='bosster.STATUS',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -87,8 +87,8 @@ _STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=746,
-  serialized_end=806,
+  serialized_start=795,
+  serialized_end=855,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS)
 
@@ -107,7 +107,7 @@ COMPLETED = 3
 
 _CONTACT_TYPE = _descriptor.EnumDescriptor(
   name='Type',
-  full_name='main.Contact.Type',
+  full_name='bosster.Contact.Type',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -130,35 +130,35 @@ _CONTACT_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=97,
-  serialized_end=149,
+  serialized_start=104,
+  serialized_end=156,
 )
 _sym_db.RegisterEnumDescriptor(_CONTACT_TYPE)
 
 
 _CONTACT = _descriptor.Descriptor(
   name='Contact',
-  full_name='main.Contact',
+  full_name='bosster.Contact',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='main.Contact.name', index=0,
+      name='name', full_name='bosster.Contact.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='type', full_name='main.Contact.type', index=1,
+      name='type', full_name='bosster.Contact.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='main.Contact.value', index=2,
+      name='value', full_name='bosster.Contact.value', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -177,69 +177,69 @@ _CONTACT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23,
-  serialized_end=149,
+  serialized_start=27,
+  serialized_end=156,
 )
 
 
 _TARGET = _descriptor.Descriptor(
   name='Target',
-  full_name='main.Target',
+  full_name='bosster.Target',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='external_id', full_name='main.Target.external_id', index=0,
+      name='external_id', full_name='bosster.Target.external_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='type', full_name='main.Target.type', index=1,
+      name='type', full_name='bosster.Target.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_id', full_name='main.Target.social_id', index=2,
+      name='social_id', full_name='bosster.Target.social_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_token', full_name='main.Target.social_token', index=3,
+      name='social_token', full_name='bosster.Target.social_token', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_login', full_name='main.Target.social_login', index=4,
+      name='social_login', full_name='bosster.Target.social_login', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_password', full_name='main.Target.social_password', index=5,
+      name='social_password', full_name='bosster.Target.social_password', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_app_id', full_name='main.Target.social_app_id', index=6,
+      name='social_app_id', full_name='bosster.Target.social_app_id', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_app_secret', full_name='main.Target.social_app_secret', index=7,
+      name='social_app_secret', full_name='bosster.Target.social_app_secret', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -257,27 +257,27 @@ _TARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=152,
-  serialized_end=351,
+  serialized_start=159,
+  serialized_end=361,
 )
 
 
 _POST = _descriptor.Descriptor(
   name='Post',
-  full_name='main.Post',
+  full_name='bosster.Post',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='main.Post.message', index=0,
+      name='message', full_name='bosster.Post.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='image_urls', full_name='main.Post.image_urls', index=1,
+      name='image_urls', full_name='bosster.Post.image_urls', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -295,41 +295,41 @@ _POST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=353,
-  serialized_end=396,
+  serialized_start=363,
+  serialized_end=406,
 )
 
 
 _POSTREQUEST = _descriptor.Descriptor(
   name='PostRequest',
-  full_name='main.PostRequest',
+  full_name='bosster.PostRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='post', full_name='main.PostRequest.post', index=0,
+      name='post', full_name='bosster.PostRequest.post', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sync', full_name='main.PostRequest.sync', index=1,
+      name='sync', full_name='bosster.PostRequest.sync', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='contacts', full_name='main.PostRequest.contacts', index=2,
+      name='contacts', full_name='bosster.PostRequest.contacts', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='targets', full_name='main.PostRequest.targets', index=3,
+      name='targets', full_name='bosster.PostRequest.targets', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -347,34 +347,41 @@ _POSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=398,
-  serialized_end=515,
+  serialized_start=408,
+  serialized_end=534,
 )
 
 
 _POSTJOB = _descriptor.Descriptor(
   name='PostJob',
-  full_name='main.PostJob',
+  full_name='bosster.PostJob',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='social_provider', full_name='main.PostJob.social_provider', index=0,
+      name='external_id', full_name='bosster.PostJob.external_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='social_provider', full_name='bosster.PostJob.social_provider', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='status', full_name='main.PostJob.status', index=1,
+      name='status', full_name='bosster.PostJob.status', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='error', full_name='main.PostJob.error', index=2,
+      name='error', full_name='bosster.PostJob.error', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -392,20 +399,20 @@ _POSTJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=517,
-  serialized_end=614,
+  serialized_start=536,
+  serialized_end=660,
 )
 
 
 _POSTREPLY = _descriptor.Descriptor(
   name='PostReply',
-  full_name='main.PostReply',
+  full_name='bosster.PostReply',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='jobs', full_name='main.PostReply.jobs', index=0,
+      name='jobs', full_name='bosster.PostReply.jobs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -423,8 +430,8 @@ _POSTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=616,
-  serialized_end=656,
+  serialized_start=662,
+  serialized_end=705,
 )
 
 _CONTACT.fields_by_name['type'].enum_type = _CONTACT_TYPE
@@ -449,42 +456,42 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Contact = _reflection.GeneratedProtocolMessageType('Contact', (_message.Message,), dict(
   DESCRIPTOR = _CONTACT,
   __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:main.Contact)
+  # @@protoc_insertion_point(class_scope:bosster.Contact)
   ))
 _sym_db.RegisterMessage(Contact)
 
 Target = _reflection.GeneratedProtocolMessageType('Target', (_message.Message,), dict(
   DESCRIPTOR = _TARGET,
   __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:main.Target)
+  # @@protoc_insertion_point(class_scope:bosster.Target)
   ))
 _sym_db.RegisterMessage(Target)
 
 Post = _reflection.GeneratedProtocolMessageType('Post', (_message.Message,), dict(
   DESCRIPTOR = _POST,
   __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:main.Post)
+  # @@protoc_insertion_point(class_scope:bosster.Post)
   ))
 _sym_db.RegisterMessage(Post)
 
 PostRequest = _reflection.GeneratedProtocolMessageType('PostRequest', (_message.Message,), dict(
   DESCRIPTOR = _POSTREQUEST,
   __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:main.PostRequest)
+  # @@protoc_insertion_point(class_scope:bosster.PostRequest)
   ))
 _sym_db.RegisterMessage(PostRequest)
 
 PostJob = _reflection.GeneratedProtocolMessageType('PostJob', (_message.Message,), dict(
   DESCRIPTOR = _POSTJOB,
   __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:main.PostJob)
+  # @@protoc_insertion_point(class_scope:bosster.PostJob)
   ))
 _sym_db.RegisterMessage(PostJob)
 
 PostReply = _reflection.GeneratedProtocolMessageType('PostReply', (_message.Message,), dict(
   DESCRIPTOR = _POSTREPLY,
   __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:main.PostReply)
+  # @@protoc_insertion_point(class_scope:bosster.PostReply)
   ))
 _sym_db.RegisterMessage(PostReply)
 
@@ -492,16 +499,16 @@ _sym_db.RegisterMessage(PostReply)
 
 _POSTER = _descriptor.ServiceDescriptor(
   name='Poster',
-  full_name='main.Poster',
+  full_name='bosster.Poster',
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=808,
-  serialized_end=862,
+  serialized_start=857,
+  serialized_end=917,
   methods=[
   _descriptor.MethodDescriptor(
     name='Post',
-    full_name='main.Poster.Post',
+    full_name='bosster.Poster.Post',
     index=0,
     containing_service=None,
     input_type=_POSTREQUEST,
@@ -534,7 +541,7 @@ try:
         channel: A grpc.Channel.
       """
       self.Post = channel.unary_unary(
-          '/main.Poster/Post',
+          '/bosster.Poster/Post',
           request_serializer=PostRequest.SerializeToString,
           response_deserializer=PostReply.FromString,
           )
@@ -561,7 +568,7 @@ try:
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-        'main.Poster', rpc_method_handlers)
+        'bosster.Poster', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -601,13 +608,13 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('main.Poster', 'Post'): PostRequest.FromString,
+      ('bosster.Poster', 'Post'): PostRequest.FromString,
     }
     response_serializers = {
-      ('main.Poster', 'Post'): PostReply.SerializeToString,
+      ('bosster.Poster', 'Post'): PostReply.SerializeToString,
     }
     method_implementations = {
-      ('main.Poster', 'Post'): face_utilities.unary_unary_inline(servicer.Post),
+      ('bosster.Poster', 'Post'): face_utilities.unary_unary_inline(servicer.Post),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
     return beta_implementations.server(method_implementations, options=server_options)
@@ -620,16 +627,16 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('main.Poster', 'Post'): PostRequest.SerializeToString,
+      ('bosster.Poster', 'Post'): PostRequest.SerializeToString,
     }
     response_deserializers = {
-      ('main.Poster', 'Post'): PostReply.FromString,
+      ('bosster.Poster', 'Post'): PostReply.FromString,
     }
     cardinalities = {
       'Post': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
-    return beta_implementations.dynamic_stub(channel, 'main.Poster', cardinalities, options=stub_options)
+    return beta_implementations.dynamic_stub(channel, 'bosster.Poster', cardinalities, options=stub_options)
 except ImportError:
   pass
 # @@protoc_insertion_point(module_scope)
