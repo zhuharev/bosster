@@ -59,7 +59,7 @@
   branch = "master"
   name = "github.com/zhuharev/bosster"
   packages = [".","grpc/server"]
-  revision = "767e62604080b679daad8e964bd8b619bd575fe2"
+  revision = "4b704030a8fea4c8b984d67dff022d0886b0be3e"
 
 [[projects]]
   branch = "master"
@@ -106,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2f7073f4dc48c111f27e2057982a350a2fe8275a9ba0f29eed0a95a3df2e6c73"
+  inputs-digest = "c431904a880dd99c6140f2fbc48e949eb4676d7970858e65026d1866b328c41c"
   solver-name = "gps-cdcl"
   solver-version = 1

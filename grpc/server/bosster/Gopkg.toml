@@ -27,6 +27,10 @@
 
 [[constraint]]
   branch = "master"
+  name = "github.com/ungerik/go-dry"
+
+[[constraint]]
+  branch = "master"
   name = "github.com/zhuharev/bosster"
 
 [[constraint]]
