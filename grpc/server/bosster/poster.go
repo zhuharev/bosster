@@ -8,7 +8,7 @@ import (
 	pbserver "github.com/zhuharev/bosster/grpc/server"
 )
 
-func post(job *Job) {
+func (s *server) post(job *Job) {
 	defer job.doneJob()
 
 	switch job.Type {
@@ -21,18 +21,25 @@ func post(job *Job) {
 	}
 }
 
-func postToVk(job *Job) (socialID string, err error) {
+func postToVk(job *Job) (err error) {
+	debug("Post to vk")
 	intID, err := bosster.PostToVk(bosster.Credentials{
 		VkAccessToken: job.PostJob.GetSocialToken(),
-		VkOwnerID:     com.StrTo(job.PostJob.GetSocialId()).MustInt(),
-	}, bosster.Post{Body: job.PostReq.Post.Message, ImageURLs: job.PostReq.Post.ImageUrls})
+		VkOwnerID:     -com.StrTo(job.PostJob.GetSocialId()).MustInt(),
+	},
+		bosster.Post{Body: job.PostReq.Post.Message,
+			ImageURLs: job.PostReq.Post.ImageUrls})
 	if err != nil {
-		return "", err
+		return err
 	}
-	return fmt.Sprint(intID), nil
+
+	job.SocialID = fmt.Sprint(intID)
+
+	return nil
 }
 
-func postToFb(job *Job) (string, error) {
+func postToFb(job *Job) error {
+	debug("Post to fb")
 	credentials := bosster.Credentials{
 		FacebookToken:   job.PostJob.GetSocialToken(),
 		FacebookGroupID: job.PostJob.GetSocialId(),
@@ -41,5 +48,9 @@ func postToFb(job *Job) (string, error) {
 		Body:      job.PostReq.Post.Message,
 		ImageURLs: job.PostReq.Post.ImageUrls,
 	}
-	return bosster.PostToFacebook(credentials, post)
+
+	socID, err := bosster.PostToFacebook(credentials, post)
+
+	job.SocialID = socID
+	return err
 }

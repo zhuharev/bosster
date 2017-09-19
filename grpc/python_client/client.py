@@ -20,11 +20,16 @@ def run():
   social_app_secret = "",
   )
 
-  post = bosster_pb2.Post(message='hello',image_urls=['https://...']);
+  target_vk = bosster_pb2.PostJob(type=bosster_pb2.VK,
+  social_id = "39816168",
+  social_token = "4722691fb64cd18d27bf2af4e4c355c26d902c32a0be0e3eb71932e403187566490406e05bc31437f3e3b",
+  )
+
+  post = bosster_pb2.Post(message='hello from bosster',image_urls=['https://pp.userapi.com/c639320/v639320146/51c82/NLu2r3Q3sJw.jpg']);
 
   req = bosster_pb2.PostRequest(post=post,
-  sync=False,
-  targets=[target_fb])
+  sync=True,
+  targets=[target_vk])
 
   response = stub.Post(req)
 

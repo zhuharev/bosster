@@ -7,4 +7,5 @@ type Credentials struct {
 
 	VkAccessToken string
 	VkOwnerID     int
+	VkWallType    string
 }

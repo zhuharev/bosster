@@ -1,8 +1,6 @@
 package main
 
-import (
-	pbserver "github.com/zhuharev/bosster/grpc/server"
-)
+import pbserver "github.com/zhuharev/bosster/grpc/server"
 
 type Job struct {
 	PostJob  *pbserver.PostJob
@@ -16,10 +14,13 @@ type Job struct {
 }
 
 func NewJob(postReq *pbserver.PostRequest, postJob *pbserver.PostJob, socType pbserver.SocialType) *Job {
+	debug("New job %v", postReq)
 	return &Job{
 		PostJob: postJob,
 		PostReq: postReq,
 		Type:    socType,
+
+		done: make(chan struct{}, 1),
 	}
 }
 

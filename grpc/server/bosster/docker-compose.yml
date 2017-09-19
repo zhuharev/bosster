@@ -4,3 +4,5 @@ services:
       image: zhuharev/bosster
       ports:
           - "2020:2020"
+      environment:
+          - BOSSTER_WEBHOOK=https://example.com/endpoint

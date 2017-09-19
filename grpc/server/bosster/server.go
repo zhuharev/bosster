@@ -11,10 +11,18 @@ import (
 // server is used to implement helloworld.GreeterServer.
 type server struct {
 	*Queue
+	webhook    string
+	hasWebhook bool
 }
 
-func newServer() *server {
-	return &server{Queue: NewQueue()}
+func newServer(webhook string) *server {
+	s := new(server)
+	s.Queue = NewQueue(s).Start()
+	if webhook != "" {
+		s.webhook = webhook
+		s.hasWebhook = true
+	}
+	return s
 }
 
 // Post implements interface of Boster
