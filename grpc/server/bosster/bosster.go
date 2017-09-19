@@ -20,7 +20,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	pbserver.RegisterPosterServer(s, &server{})
+	pbserver.RegisterPosterServer(s, newServer())
 	// Register reflection service on gRPC server.
 	reflection.Register(s)
 	if err := s.Serve(lis); err != nil {

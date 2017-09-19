@@ -33,21 +33,6 @@ enum SocialType {
   FACEBOOK = 5;
 }
 
-message Target {
-// for webhook
-  string external_id = 1;
-
-  SocialType type = 2;
-
-  string social_id = 3;
-  string social_token = 4;
-  string social_login = 5;
-  string social_password = 6;
-
-  string social_app_id = 7;
-  string social_app_secret = 8;
-}
-
 // post represent an article with body (text) and images
 message Post {
   string message = 1;
@@ -66,7 +51,7 @@ message PostRequest {
   repeated Contact contacts = 4;
 
   // TODO: maybe rename this
-  repeated Target targets = 5;
+  repeated PostJob targets = 5;
 }
 
 enum STATUS {
@@ -78,13 +63,22 @@ enum STATUS {
 
 // для каждой соцсети свой PostJob
 message PostJob {
+  // for webhook
   string external_id = 1;
 
-  SocialType social_provider = 2;
+  SocialType type = 2;
 
-  STATUS status = 3;
+  string social_id = 3;
+  string social_token = 4;
+  string social_login = 5;
+  string social_password = 6;
+
+  string social_app_id = 7;
+  string social_app_secret = 8;
+
+  STATUS status = 9;
   // optional
-  string error = 4;
+  string error = 10;
 }
 
 // The response message

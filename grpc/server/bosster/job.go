@@ -5,6 +5,7 @@ import (
 )
 
 type Job struct {
+	PostJob  *pbserver.PostJob
 	PostReq  *pbserver.PostRequest
 	Type     pbserver.SocialType
 	done     chan struct{}
@@ -14,8 +15,9 @@ type Job struct {
 	Status   pbserver.STATUS
 }
 
-func NewJob(postReq *pbserver.PostRequest, socType pbserver.SocialType) *Job {
+func NewJob(postReq *pbserver.PostRequest, postJob *pbserver.PostJob, socType pbserver.SocialType) *Job {
 	return &Job{
+		PostJob: postJob,
 		PostReq: postReq,
 		Type:    socType,
 	}
@@ -39,13 +41,7 @@ type Jobs []*Job
 func (js Jobs) ConvertToReply() *pbserver.PostReply {
 	jobs := []*pbserver.PostJob{}
 	for _, job := range js {
-		jobs = append(jobs, &pbserver.PostJob{
-			SocialId:       job.SocialID,
-			SocialOwnerId:  job.PostReq.GetSocialId(),
-			SocialProvider: job.Type,
-			Status:         job.Status,
-			Error:          job.Error,
-		})
+		jobs = append(jobs, job.PostJob)
 	}
 	return &pbserver.PostReply{Jobs: jobs}
 }

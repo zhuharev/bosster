@@ -22,8 +22,8 @@ func (q *Queue) Start() {
 	}()
 }
 
-func (q *Queue) Enqueue(postJob *pbserver.PostRequest, socType pbserver.SocialType) *Job {
-	j := NewJob(postJob, socType)
+func (q *Queue) Enqueue(postReq *pbserver.PostRequest, postJob *pbserver.PostJob, socType pbserver.SocialType) *Job {
+	j := NewJob(postReq, postJob, socType)
 	q.ch <- j
 	return j
 }

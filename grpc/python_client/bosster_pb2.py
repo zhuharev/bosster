@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bosster.proto',
   package='bosster',
   syntax='proto3',
-  serialized_pb=_b('\n\rbosster.proto\x12\x07\x62osster\"\x81\x01\n\x07\x43ontact\x12\x0c\n\x04name\x18\x01 \x01(\t\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.bosster.Contact.Type\x12\r\n\x05value\x18\x03 \x01(\t\"4\n\x04Type\x12\r\n\tUNIVERSAL\x10\x00\x12\t\n\x05PHONE\x10\x01\x12\x07\n\x03URL\x10\x02\x12\t\n\x05\x45MAIL\x10\x03\"\xca\x01\n\x06Target\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12!\n\x04type\x18\x02 \x01(\x0e\x32\x13.bosster.SocialType\x12\x11\n\tsocial_id\x18\x03 \x01(\t\x12\x14\n\x0csocial_token\x18\x04 \x01(\t\x12\x14\n\x0csocial_login\x18\x05 \x01(\t\x12\x17\n\x0fsocial_password\x18\x06 \x01(\t\x12\x15\n\rsocial_app_id\x18\x07 \x01(\t\x12\x19\n\x11social_app_secret\x18\x08 \x01(\t\"+\n\x04Post\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x12\n\nimage_urls\x18\x02 \x03(\t\"~\n\x0bPostRequest\x12\x1b\n\x04post\x18\x01 \x01(\x0b\x32\r.bosster.Post\x12\x0c\n\x04sync\x18\x02 \x01(\x08\x12\"\n\x08\x63ontacts\x18\x04 \x03(\x0b\x32\x10.bosster.Contact\x12 \n\x07targets\x18\x05 \x03(\x0b\x32\x0f.bosster.Target\"|\n\x07PostJob\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12,\n\x0fsocial_provider\x18\x02 \x01(\x0e\x32\x13.bosster.SocialType\x12\x1f\n\x06status\x18\x03 \x01(\x0e\x32\x0f.bosster.STATUS\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"+\n\tPostReply\x12\x1e\n\x04jobs\x18\x01 \x03(\x0b\x32\x10.bosster.PostJob*V\n\nSocialType\x12\x08\n\x04NONE\x10\x00\x12\x06\n\x02VK\x10\x01\x12\x0c\n\x08TELEGRAM\x10\x02\x12\r\n\tINSTAGRAM\x10\x03\x12\x0b\n\x07TWITTER\x10\x04\x12\x0c\n\x08\x46\x41\x43\x45\x42OOK\x10\x05*<\n\x06STATUS\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\x12\r\n\tCOMPLETED\x10\x03\x32<\n\x06Poster\x12\x32\n\x04Post\x12\x14.bosster.PostRequest\x1a\x12.bosster.PostReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\rbosster.proto\x12\x07\x62osster\"\x81\x01\n\x07\x43ontact\x12\x0c\n\x04name\x18\x01 \x01(\t\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.bosster.Contact.Type\x12\r\n\x05value\x18\x03 \x01(\t\"4\n\x04Type\x12\r\n\tUNIVERSAL\x10\x00\x12\t\n\x05PHONE\x10\x01\x12\x07\n\x03URL\x10\x02\x12\t\n\x05\x45MAIL\x10\x03\"+\n\x04Post\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x12\n\nimage_urls\x18\x02 \x03(\t\"\x7f\n\x0bPostRequest\x12\x1b\n\x04post\x18\x01 \x01(\x0b\x32\r.bosster.Post\x12\x0c\n\x04sync\x18\x02 \x01(\x08\x12\"\n\x08\x63ontacts\x18\x04 \x03(\x0b\x32\x10.bosster.Contact\x12!\n\x07targets\x18\x05 \x03(\x0b\x32\x10.bosster.PostJob\"\xfb\x01\n\x07PostJob\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12!\n\x04type\x18\x02 \x01(\x0e\x32\x13.bosster.SocialType\x12\x11\n\tsocial_id\x18\x03 \x01(\t\x12\x14\n\x0csocial_token\x18\x04 \x01(\t\x12\x14\n\x0csocial_login\x18\x05 \x01(\t\x12\x17\n\x0fsocial_password\x18\x06 \x01(\t\x12\x15\n\rsocial_app_id\x18\x07 \x01(\t\x12\x19\n\x11social_app_secret\x18\x08 \x01(\t\x12\x1f\n\x06status\x18\t \x01(\x0e\x32\x0f.bosster.STATUS\x12\r\n\x05\x65rror\x18\n \x01(\t\"+\n\tPostReply\x12\x1e\n\x04jobs\x18\x01 \x03(\x0b\x32\x10.bosster.PostJob*V\n\nSocialType\x12\x08\n\x04NONE\x10\x00\x12\x06\n\x02VK\x10\x01\x12\x0c\n\x08TELEGRAM\x10\x02\x12\r\n\tINSTAGRAM\x10\x03\x12\x0b\n\x07TWITTER\x10\x04\x12\x0c\n\x08\x46\x41\x43\x45\x42OOK\x10\x05*<\n\x06STATUS\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08\x45NQUEUED\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\x12\r\n\tCOMPLETED\x10\x03\x32<\n\x06Poster\x12\x32\n\x04Post\x12\x14.bosster.PostRequest\x1a\x12.bosster.PostReply\"\x00\x62\x06proto3')
 )
 
 _SOCIALTYPE = _descriptor.EnumDescriptor(
@@ -56,8 +56,8 @@ _SOCIALTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=707,
-  serialized_end=793,
+  serialized_start=631,
+  serialized_end=717,
 )
 _sym_db.RegisterEnumDescriptor(_SOCIALTYPE)
 
@@ -87,8 +87,8 @@ _STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=795,
-  serialized_end=855,
+  serialized_start=719,
+  serialized_end=779,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS)
 
@@ -182,86 +182,6 @@ _CONTACT = _descriptor.Descriptor(
 )
 
 
-_TARGET = _descriptor.Descriptor(
-  name='Target',
-  full_name='bosster.Target',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='external_id', full_name='bosster.Target.external_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='bosster.Target.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='social_id', full_name='bosster.Target.social_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='social_token', full_name='bosster.Target.social_token', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='social_login', full_name='bosster.Target.social_login', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='social_password', full_name='bosster.Target.social_password', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='social_app_id', full_name='bosster.Target.social_app_id', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='social_app_secret', full_name='bosster.Target.social_app_secret', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=159,
-  serialized_end=361,
-)
-
-
 _POST = _descriptor.Descriptor(
   name='Post',
   full_name='bosster.Post',
@@ -295,8 +215,8 @@ _POST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=363,
-  serialized_end=406,
+  serialized_start=158,
+  serialized_end=201,
 )
 
 
@@ -347,8 +267,8 @@ _POSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=408,
-  serialized_end=534,
+  serialized_start=203,
+  serialized_end=330,
 )
 
 
@@ -367,22 +287,64 @@ _POSTJOB = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='social_provider', full_name='bosster.PostJob.social_provider', index=1,
+      name='type', full_name='bosster.PostJob.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='status', full_name='bosster.PostJob.status', index=2,
-      number=3, type=14, cpp_type=8, label=1,
+      name='social_id', full_name='bosster.PostJob.social_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='social_token', full_name='bosster.PostJob.social_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='social_login', full_name='bosster.PostJob.social_login', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='social_password', full_name='bosster.PostJob.social_password', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='social_app_id', full_name='bosster.PostJob.social_app_id', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='social_app_secret', full_name='bosster.PostJob.social_app_secret', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='bosster.PostJob.status', index=8,
+      number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='error', full_name='bosster.PostJob.error', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='error', full_name='bosster.PostJob.error', index=9,
+      number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -399,8 +361,8 @@ _POSTJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=536,
-  serialized_end=660,
+  serialized_start=333,
+  serialized_end=584,
 )
 
 
@@ -430,21 +392,19 @@ _POSTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=662,
-  serialized_end=705,
+  serialized_start=586,
+  serialized_end=629,
 )
 
 _CONTACT.fields_by_name['type'].enum_type = _CONTACT_TYPE
 _CONTACT_TYPE.containing_type = _CONTACT
-_TARGET.fields_by_name['type'].enum_type = _SOCIALTYPE
 _POSTREQUEST.fields_by_name['post'].message_type = _POST
 _POSTREQUEST.fields_by_name['contacts'].message_type = _CONTACT
-_POSTREQUEST.fields_by_name['targets'].message_type = _TARGET
-_POSTJOB.fields_by_name['social_provider'].enum_type = _SOCIALTYPE
+_POSTREQUEST.fields_by_name['targets'].message_type = _POSTJOB
+_POSTJOB.fields_by_name['type'].enum_type = _SOCIALTYPE
 _POSTJOB.fields_by_name['status'].enum_type = _STATUS
 _POSTREPLY.fields_by_name['jobs'].message_type = _POSTJOB
 DESCRIPTOR.message_types_by_name['Contact'] = _CONTACT
-DESCRIPTOR.message_types_by_name['Target'] = _TARGET
 DESCRIPTOR.message_types_by_name['Post'] = _POST
 DESCRIPTOR.message_types_by_name['PostRequest'] = _POSTREQUEST
 DESCRIPTOR.message_types_by_name['PostJob'] = _POSTJOB
@@ -459,13 +419,6 @@ Contact = _reflection.GeneratedProtocolMessageType('Contact', (_message.Message,
   # @@protoc_insertion_point(class_scope:bosster.Contact)
   ))
 _sym_db.RegisterMessage(Contact)
-
-Target = _reflection.GeneratedProtocolMessageType('Target', (_message.Message,), dict(
-  DESCRIPTOR = _TARGET,
-  __module__ = 'bosster_pb2'
-  # @@protoc_insertion_point(class_scope:bosster.Target)
-  ))
-_sym_db.RegisterMessage(Target)
 
 Post = _reflection.GeneratedProtocolMessageType('Post', (_message.Message,), dict(
   DESCRIPTOR = _POST,
@@ -503,8 +456,8 @@ _POSTER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=857,
-  serialized_end=917,
+  serialized_start=781,
+  serialized_end=841,
   methods=[
   _descriptor.MethodDescriptor(
     name='Post',

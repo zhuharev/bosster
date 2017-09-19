@@ -23,8 +23,8 @@ func post(job *Job) {
 
 func postToVk(job *Job) (socialID string, err error) {
 	intID, err := bosster.PostToVk(bosster.Credentials{
-		VkAccessToken: job.PostReq.GetSocialToken(),
-		VkOwnerID:     com.StrTo(job.PostReq.GetSocialId()).MustInt(),
+		VkAccessToken: job.PostJob.GetSocialToken(),
+		VkOwnerID:     com.StrTo(job.PostJob.GetSocialId()).MustInt(),
 	}, bosster.Post{Body: job.PostReq.Post.Message, ImageURLs: job.PostReq.Post.ImageUrls})
 	if err != nil {
 		return "", err
@@ -34,8 +34,8 @@ func postToVk(job *Job) (socialID string, err error) {
 
 func postToFb(job *Job) (string, error) {
 	credentials := bosster.Credentials{
-		FacebookToken:   job.PostReq.GetSocialToken(),
-		FacebookGroupID: job.PostReq.GetSocialId(),
+		FacebookToken:   job.PostJob.GetSocialToken(),
+		FacebookGroupID: job.PostJob.GetSocialId(),
 	}
 	post := bosster.Post{
 		Body:      job.PostReq.Post.Message,
