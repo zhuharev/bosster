@@ -1,7 +1,6 @@
 syntax = "proto3";
 
-// server
-package server;
+package main;
 
 // The greeting service definition.
 service Poster {
@@ -34,6 +33,21 @@ enum SocialType {
   FACEBOOK = 5;
 }
 
+message Target {
+// for webhook
+  string external_id = 1;
+
+  SocialType type = 2;
+
+  string social_id = 3;
+  string social_token = 4;
+  string social_login = 5;
+  string social_password = 6;
+
+  string social_app_id = 7;
+  string social_app_secret = 8;
+}
+
 // post represent an article with body (text) and images
 message Post {
   string message = 1;
@@ -43,25 +57,16 @@ message Post {
 
 // The request message
 message PostRequest {
-  string id = 1;
-
-  Post post = 2;
-
+  Post post = 1;
   // if async == false, server will send response instantly and enqueue
   // post request to background
   // if async == true, server will be wait to post article to each soc network
-  bool async = 3;
+  bool sync = 2;
 
   repeated Contact contacts = 4;
 
   // TODO: maybe rename this
-  repeated SocialType targets = 5;
-
-  // id группы для постинга
-  string social_id = 6;
-  string social_token = 7;
-  string social_login = 8;
-  string social_password = 9;
+  repeated Target targets = 5;
 }
 
 enum STATUS {
@@ -73,19 +78,11 @@ enum STATUS {
 
 // для каждой соцсети свой PostJob
 message PostJob {
-  // нужно для запроса состояния,
-  // если процедура будет выполняться асинхронно
-  string post_request_id = 1;
-  // id поста
-  string social_id = 2;
-  // на чью стену опубликовали
-  string social_owner_id = 3;
+  SocialType social_provider = 2;
 
-  SocialType social_provider = 4;
-
-  STATUS status = 5;
+  STATUS status = 3;
   // optional
-  string error = 6;
+  string error = 4;
 
 }
 

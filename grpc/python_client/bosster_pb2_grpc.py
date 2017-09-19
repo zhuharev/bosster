@@ -15,7 +15,7 @@ class PosterStub(object):
       channel: A grpc.Channel.
     """
     self.Post = channel.unary_unary(
-        '/server.Poster/Post',
+        '/main.Poster/Post',
         request_serializer=bosster__pb2.PostRequest.SerializeToString,
         response_deserializer=bosster__pb2.PostReply.FromString,
         )
@@ -42,5 +42,5 @@ def add_PosterServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'server.Poster', rpc_method_handlers)
+      'main.Poster', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
