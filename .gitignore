@@ -1,3 +1,3 @@
 vendor/
 grpc/bosster/
-__pycache__
+grpc/python_client/__pycache__

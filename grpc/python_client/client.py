@@ -7,13 +7,15 @@ import bosster_pb2_grpc
 
 
 def run():
-  channel = grpc.insecure_channel('localhost:50051')
+  channel = grpc.insecure_channel('localhost:2020')
   stub = bosster_pb2_grpc.PosterStub(channel)
+
+  target_vk = bosster_pb2.Target()
 
   post = bosster_pb2.Post(message='hello',image_urls=['https://...']);
   response = stub.Post(bosster_pb2.PostRequest(post=post, async=True,
   social_token="token", social_login="login", social_password="pass"))
-  
+
   print("client received: " + str(response.jobs[0].status))
   print("{0}".format(response.jobs[0].status == bosster_pb2.ENQUEUED))
 

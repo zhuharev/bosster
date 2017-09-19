@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	port = ":50051"
+	port = ":2020"
 )
 
 func main() {
