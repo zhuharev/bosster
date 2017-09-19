@@ -59,7 +59,7 @@
   branch = "master"
   name = "github.com/zhuharev/bosster"
   packages = [".","grpc/server"]
-  revision = "de10ecb2b9962307f169df5a1211bd8d51f0c0a5"
+  revision = "188ce9c8b03d9f89713c0bd980a1f9ae2158f146"
 
 [[projects]]
   branch = "master"

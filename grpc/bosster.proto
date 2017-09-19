@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package main;
+package bosster;
 
 // The greeting service definition.
 service Poster {
@@ -78,12 +78,13 @@ enum STATUS {
 
 // для каждой соцсети свой PostJob
 message PostJob {
+  string external_id = 1;
+
   SocialType social_provider = 2;
 
   STATUS status = 3;
   // optional
   string error = 4;
-
 }
 
 // The response message

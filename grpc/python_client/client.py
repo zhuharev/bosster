@@ -21,9 +21,12 @@ def run():
   )
 
   post = bosster_pb2.Post(message='hello',image_urls=['https://...']);
-  response = stub.Post(bosster_pb2.PostRequest(post=post,
+
+  req = bosster_pb2.PostRequest(post=post,
   sync=True,
-  targets=[target_fb]))
+  targets=[target_fb])
+
+  response = stub.Post(req)
 
   print("client received: " + str(response.jobs[0].status))
   print("{0}".format(response.jobs[0].status == bosster_pb2.ENQUEUED))
