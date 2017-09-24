@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package bosster;
+
+// The greeting service definition.
+service Poster {
+  // Sends a greeting
+  rpc Post (PostRequest) returns (PostReply) {}
+}
+
+// user contact
+// будет приложено внизу поста
+message Contact {
+  string name = 1;
+  enum Type {
+    UNIVERSAL = 0;
+    PHONE = 1;
+    URL = 2;
+    EMAIL = 3;
+  }
+  Type type = 2;
+  string value = 3;
+}
+
+enum SocialType {
+  // enum must start from zero
+  // we will return error if ST == none
+  NONE = 0;
+  VK = 1;
+  TELEGRAM = 2;
+  INSTAGRAM = 3;
+  TWITTER = 4;
+  FACEBOOK = 5;
+}
+
+// post represent an article with body (text) and images
+message Post {
+  string message = 1;
+  repeated string image_urls = 2;
+}
+
+
+// The request message
+message PostRequest {
+  Post post = 1;
+  // if async == false, server will send response instantly and enqueue
+  // post request to background
+  // if async == true, server will be wait to post article to each soc network
+  bool sync = 2;
+
+  repeated Contact contacts = 4;
+
+  // TODO: maybe rename this
+  repeated PostJob targets = 5;
+}
+
+enum STATUS {
+  UNKNOWN = 0;
+  ENQUEUED = 1;
+  FAIL = 2;
+  COMPLETED = 3;
+}
+
+// для каждой соцсети свой PostJob
+message PostJob {
+  // for webhook
+  string external_id = 1;
+
+  SocialType type = 2;
+
+  string social_id = 3;
+
+  string social_wall_type = 11;
+
+  string social_token = 4;
+  string social_login = 5;
+  string social_password = 6;
+
+  string social_app_id = 7;
+  string social_app_secret = 8;
+
+  STATUS status = 9;
+  // optional
+  string error = 10;
+}
+
+// The response message
+// это будет возвращаться
+message PostReply {
+  repeated PostJob jobs = 1;
+}
