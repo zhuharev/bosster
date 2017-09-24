@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/Unknwon/com"
+	"github.com/fatih/color"
 	"github.com/zhuharev/bosster"
 	pbserver "github.com/zhuharev/bosster/grpc/server"
 )
@@ -19,9 +20,13 @@ func (s *server) post(job *Job) {
 	default:
 		job.Error = "Unsupported social type"
 	}
+
+	if job.Error != "" {
+		color.Red("%s", job.Error)
+	}
 }
 
-func postToVk(job *Job) (err error) {
+func postToVk(job *Job) {
 	debug("Post to vk")
 	intID, err := bosster.PostToVk(bosster.Credentials{
 		VkAccessToken: job.PostJob.GetSocialToken(),
@@ -30,12 +35,13 @@ func postToVk(job *Job) (err error) {
 		bosster.Post{Body: job.PostReq.Post.Message,
 			ImageURLs: job.PostReq.Post.ImageUrls})
 	if err != nil {
-		return err
+		job.Error = err.Error()
+		return
 	}
 
 	job.SocialID = fmt.Sprint(intID)
 
-	return nil
+	return
 }
 
 func postToFb(job *Job) error {

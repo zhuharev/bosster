@@ -30,6 +30,7 @@ func main() {
 	pbserver.RegisterPosterServer(s, newServer(webhook))
 	// Register reflection service on gRPC server.
 	reflection.Register(s)
+	log.Printf("Start linstening %s\n", port)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
